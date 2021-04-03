@@ -7,6 +7,7 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
+          test: /\.jsx?$/,
           loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-react', '@babel/preset-env'],

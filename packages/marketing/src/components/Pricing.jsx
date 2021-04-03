@@ -15,13 +15,18 @@ import { Link as RouterLink } from 'react-router-dom';
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography
+      variant="body2"
+      color="textSecondary"
+      align="center"
+    >
       {'Copyright © '}
       <Link color="inherit" href="https://material-ui.com/">
         Your Website
-      </Link>{' '}
+      </Link>
+      {' '}
       {new Date().getFullYear()}
-      {'.'}
+      .
     </Typography>
   );
 }
@@ -143,9 +148,13 @@ export default function Pricing() {
   const classes = useStyles();
 
   return (
-    <React.Fragment>
+    <>
       {/* Hero unit */}
-      <Container maxWidth="sm" component="main" className={classes.heroContent}>
+      <Container
+        maxWidth="sm"
+        component="main"
+        className={classes.heroContent}
+      >
         <Typography
           component="h1"
           variant="h2"
@@ -161,8 +170,10 @@ export default function Pricing() {
           color="textSecondary"
           component="p"
         >
-          Quickly build an effective pricing table for your potential customers
-          with this layout. It&apos;s built with default Material-UI components
+          Quickly build an effective pricing table for your
+          potential customers
+          with this layout. It&apos;s built with default
+          Material-UI components
           with little customization.
         </Typography>
       </Container>
@@ -184,15 +195,24 @@ export default function Pricing() {
                   subheader={tier.subheader}
                   titleTypographyProps={{ align: 'center' }}
                   subheaderTypographyProps={{ align: 'center' }}
-                  action={tier.title === 'Pro' ? <StarIcon /> : null}
+                  action={tier.title === 'Pro'
+                    ? <StarIcon /> : null}
                   className={classes.cardHeader}
                 />
                 <CardContent>
                   <div className={classes.cardPricing}>
-                    <Typography component="h2" variant="h3" color="textPrimary">
-                      ${tier.price}
+                    <Typography
+                      component="h2"
+                      variant="h3"
+                      color="textPrimary"
+                    >
+                      $
+                      {tier.price}
                     </Typography>
-                    <Typography variant="h6" color="textSecondary">
+                    <Typography
+                      variant="h6"
+                      color="textSecondary"
+                    >
                       /mo
                     </Typography>
                   </div>
@@ -225,17 +245,29 @@ export default function Pricing() {
         </Grid>
       </Container>
       {/* Footer */}
-      <Container maxWidth="md" component="footer" className={classes.footer}>
+      <Container
+        maxWidth="md"
+        component="footer"
+        className={classes.footer}
+      >
         <Grid container spacing={4} justify="space-evenly">
           {footers.map((footer) => (
             <Grid item xs={6} sm={3} key={footer.title}>
-              <Typography variant="h6" color="textPrimary" gutterBottom>
+              <Typography
+                variant="h6"
+                color="textPrimary"
+                gutterBottom
+              >
                 {footer.title}
               </Typography>
               <ul>
                 {footer.description.map((item) => (
                   <li key={item}>
-                    <Link href="#" variant="subtitle1" color="textSecondary">
+                    <Link
+                      href="#"
+                      variant="subtitle1"
+                      color="textSecondary"
+                    >
                       {item}
                     </Link>
                   </li>
@@ -249,6 +281,6 @@ export default function Pricing() {
         </Box>
       </Container>
       {/* End footer */}
-    </React.Fragment>
+    </>
   );
 }
