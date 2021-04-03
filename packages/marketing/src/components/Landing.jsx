@@ -11,24 +11,6 @@ import Container from '@material-ui/core/Container';
 import MaterialLink from '@material-ui/core/Link';
 import { Link } from 'react-router-dom';
 
-function Copyright() {
-  return (
-    <Typography
-      variant="body2"
-      color="textSecondary"
-      align="center"
-    >
-      {'Copyright © '}
-      <MaterialLink component={Link} to="/" color="inherit">
-        Your Website
-      </MaterialLink>
-      {' '}
-      {new Date().getFullYear()}
-      .
-    </Typography>
-  );
-}
-
 const useStyles = makeStyles((theme) => ({
   '@global': {
     a: {
@@ -66,9 +48,25 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const Copyright = () => (
+  <Typography
+    variant="body2"
+    color="textSecondary"
+    align="center"
+  >
+    {'Copyright © '}
+    <MaterialLink component={Link} to="/" color="inherit">
+      Your Website
+    </MaterialLink>
+    {' '}
+    {new Date().getFullYear()}
+    .
+  </Typography>
+);
+
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-export default function Album() {
+const Album = () => {
   const classes = useStyles();
 
   return (
@@ -176,4 +174,6 @@ export default function Album() {
       {/* End footer */}
     </>
   );
-}
+};
+
+export default Album;
