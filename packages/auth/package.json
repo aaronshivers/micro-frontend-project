@@ -36,6 +36,9 @@
     "webpack-dev-server": "^3.11.0"
   },
   "eslintConfig": {
+    "env": {
+      "browser": true
+    },
     "extends": [
       "airbnb",
       "airbnb/hooks"
