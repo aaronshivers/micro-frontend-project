@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { createBrowserHistory, createMemoryHistory } from 'history';
+import { createMemoryHistory, createBrowserHistory } from 'history';
 import App from './App';
 
 const mount = (el, {

@@ -11,19 +11,19 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" to="/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+const Copyright = () => (
+  <Typography variant="body2" color="textSecondary" align="center">
+    {'Copyright © '}
+    <Link color="inherit" to="/">
+      Your Website
+    </Link>
+    {' '}
+    {new Date().getFullYear()}
+    .
+  </Typography>
+);
 
 const useStyles = makeStyles((theme) => ({
   '@global': {
@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn({ onSignIn }) {
+const Signin = ({ onSignIn }) => {
   const classes = useStyles();
 
   return (
@@ -105,7 +105,7 @@ export default function SignIn({ onSignIn }) {
           </Button>
           <Grid container>
             <Grid item>
-              <Link to="/auth/signup">{"Don't have an account? Sign Up"}</Link>
+              <Link to="/auth/signup">Don&apos;t have an account? Sign Up</Link>
             </Grid>
           </Grid>
         </form>
@@ -115,4 +115,10 @@ export default function SignIn({ onSignIn }) {
       </Box>
     </Container>
   );
-}
+};
+
+Signin.propTypes = {
+  onSignIn: PropTypes.func.isRequired,
+};
+
+export default Signin;

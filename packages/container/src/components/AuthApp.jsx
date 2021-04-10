@@ -1,8 +1,9 @@
 import { mount } from 'auth/AuthApp';
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-export default () => {
+const AuthApp = ({ onSignIn }) => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -16,10 +17,17 @@ export default () => {
           history.push(nextPathname);
         }
       },
+      onSignIn,
     });
 
     history.listen(onParentNavigate);
-  }, [history]);
+  }, [history, onSignIn]);
 
   return <div ref={ref} />;
 };
+
+AuthApp.propTypes = {
+  onSignIn: PropTypes.func.isRequired,
+};
+
+export default AuthApp;
