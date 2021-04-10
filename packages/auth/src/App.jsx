@@ -3,26 +3,23 @@ import { StylesProvider, createGenerateClassName } from '@material-ui/core/style
 import PropTypes from 'prop-types';
 import { Switch, Route, Router } from 'react-router-dom';
 
-// import Landing from './components/Landing';
-// import Pricing from './components/Pricing';
+import Signin from './components/Signin';
+import Signup from './components/Signup';
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'au',
 });
 
-const App = ({ history }) => (
+const App = ({ history, onSignIn }) => (
   <StylesProvider generateClassName={generateClassName}>
     <Router history={history}>
       <Switch>
-        {/* <Route */}
-        {/*  exact */}
-        {/*  path="/pricing" */}
-        {/*  component={Pricing} */}
-        {/* /> */}
-        {/* <Route */}
-        {/*  path="/" */}
-        {/*  component={Landing} */}
-        {/* /> */}
+        <Route path="/auth/signin">
+          <Signin onSignIn={onSignIn} />
+        </Route>
+        <Route path="/auth/signup">
+          <Signup onSignIn={onSignIn} />
+        </Route>
       </Switch>
     </Router>
   </StylesProvider>
@@ -32,6 +29,7 @@ App.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func.isRequired,
   }).isRequired,
+  onSignIn: PropTypes.func.isRequired,
 };
 
 export default App;
