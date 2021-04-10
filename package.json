@@ -1,0 +1,9 @@
+{
+  "name": "mfp",
+  "version": "1.0.0",
+  "repository": "git@github.com:/aaronshivers/micro-frontend-project.git",
+  "author": "aaron shivers",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"]
+}
